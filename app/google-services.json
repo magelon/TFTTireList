@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "283996865601",
+    "firebase_url": "https://tfttierlist.firebaseio.com",
+    "project_id": "tfttierlist",
+    "storage_bucket": "tfttierlist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283996865601:android:b3d8ea7c01169396",
+        "android_client_info": {
+          "package_name": "com.lon.tftt.tfttirelist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283996865601-fvdnmkmbbm61mcigporqk56d5tht38ea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lon.tftt.tfttirelist",
+            "certificate_hash": "59c31e2a17767d15fde3efff1dd6930f67069f70"
+          }
+        },
+        {
+          "client_id": "283996865601-gver241jhvbbb60m0ulvn4gsdaaem1cd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsT7A9zW3Y55je3YIN5iyuGISjx3-2bCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283996865601-gver241jhvbbb60m0ulvn4gsdaaem1cd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
