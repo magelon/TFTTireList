@@ -35,7 +35,8 @@
         android:layout_width="102dp"
         android:layout_height="100dp"
         android:layout_below="@+id/txt_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="0dp"
+        android:background="drawable/loading"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <ImageView
