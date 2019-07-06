@@ -37,7 +37,8 @@
         android:layout_below="@+id/txt_content"
         android:layout_marginTop="0dp"
         android:background="drawable/loading"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+    />
 
     <ImageView
         android:id="@+id/imageView2"
