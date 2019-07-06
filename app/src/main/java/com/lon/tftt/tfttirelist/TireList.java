@@ -66,6 +66,7 @@ public class TireList extends AppCompatActivity {
 
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("pows");
+
 //call post function
         //call firebase adapter
         //adapter.notifyDataSetChanged();
@@ -96,6 +97,13 @@ public class TireList extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull MyRecyclerViewHolder myRecyclerViewHolder, int i, @NonNull Post post) {
                         myRecyclerViewHolder.txt_title.setText(post.getTitle());
                         myRecyclerViewHolder.txt_comment.setText(post.getContent());
+                        //split the champions string into indevidul champions
+                        String[] champions=post.getContent().split(",");
+                        //convert champions to imgs
+                        for (int champion=0;champion<champions.length;champion++){
+
+                        }
+
                     }
 
                     @NonNull
