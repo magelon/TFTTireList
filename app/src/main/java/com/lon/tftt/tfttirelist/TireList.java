@@ -28,7 +28,7 @@ public class TireList extends AppCompatActivity {
     FirebaseRecyclerOptions<Post> options;
     FirebaseRecyclerAdapter<Post, MyRecyclerViewHolder> adapter;
 
-    
+
 
     private TextView mTextMessage;
 
