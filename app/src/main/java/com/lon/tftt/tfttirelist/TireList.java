@@ -108,21 +108,24 @@ public class TireList extends AppCompatActivity {
                                 }
 
                             });
+                        
+                        if(champions.length>6){
+                            databaseReferenceImg.child(champions[6]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if(dataSnapshot.getValue()!=null){
+                                        String imgUrl=(String)dataSnapshot.getValue();
 
-                        databaseReferenceImg.child(champions[6]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.getValue()!=null){
-                                    String imgUrl=(String)dataSnapshot.getValue();
+                                        Picasso.get().load(imgUrl).into(imageView2);
+                                    }
 
-                                    Picasso.get().load(imgUrl).into(imageView2);
                                 }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                        }
 
-                            }
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                            }
-                        });
 
                         databaseReferenceImg.child(champions[1]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -194,19 +197,22 @@ public class TireList extends AppCompatActivity {
                             }
                         });
 
-                        databaseReferenceImg.child(champions[7]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.getValue()!=null){
-                                    String imgUrl=(String)dataSnapshot.getValue();
+                        if(champions.length>7){
+                            databaseReferenceImg.child(champions[7]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if(dataSnapshot.getValue()!=null){
+                                        String imgUrl=(String)dataSnapshot.getValue();
 
-                                    Picasso.get().load(imgUrl).into(imageView8);
+                                        Picasso.get().load(imgUrl).into(imageView8);
+                                    }
                                 }
-                            }
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                            }
-                        });
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                            });
+                        }
+
 
                         //Picasso.get().load("https://firebasestorage.googleapis.com/v0/b/tfttierlist.appspot.com/o/tft%2Fashe.png?alt=media&token=0362ce86-7e52-4129-a268-dca171ecf94a").into(myRecyclerViewHolder.imageView);
 
