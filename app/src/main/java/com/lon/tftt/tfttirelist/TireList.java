@@ -108,7 +108,7 @@ public class TireList extends AppCompatActivity {
                                 }
 
                             });
-                        
+
                         if(champions.length>6){
                             databaseReferenceImg.child(champions[6]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
