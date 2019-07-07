@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/txt_user"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compo"
+        android:text=""
         android:textSize="18sp" />
 
     <TextView
@@ -35,10 +35,8 @@
         android:layout_width="102dp"
         android:layout_height="100dp"
         android:layout_below="@+id/txt_content"
-        android:layout_marginTop="0dp"
-        android:background="drawable/loading"
-
-    />
+        android:background="@drawable/loading"
+        />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -47,8 +45,8 @@
         android:layout_below="@+id/txt_content"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="102dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -57,8 +55,8 @@
         android:layout_below="@+id/txt_content"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="204dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -67,8 +65,9 @@
         android:layout_below="@+id/txt_content"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="306dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+        android:layout_marginRight="0dp"
+
+        android:background="@drawable/loading" />
 
 
 
@@ -78,8 +77,8 @@
         android:layout_width="102dp"
         android:layout_height="100dp"
         android:layout_below="@+id/imageView"
-        android:layout_marginTop="1dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -88,8 +87,8 @@
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="102dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -98,8 +97,8 @@
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="204dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -108,8 +107,8 @@
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
         android:layout_marginLeft="306dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars[3]" />
+
+        android:background="@drawable/loading" />
 
 
 </RelativeLayout>
