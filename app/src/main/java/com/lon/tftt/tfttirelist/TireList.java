@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import com.firebase.ui.database.SnapshotParser;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -82,8 +83,21 @@ public class TireList extends AppCompatActivity {
 
         options =
                 new FirebaseRecyclerOptions.Builder<Post>()
-                        .setQuery(databaseReference, Post.class)
-                        .build();
+                        .setQuery(databaseReference, new SnapshotParser<Post>() {
+                                    @NonNull
+                                    @Override
+                                    public Post parseSnapshot(@NonNull DataSnapshot snapshot) {
+                                        System.out.print(snapshot.getKey());
+                                        Post post=new Post();
+                                        post.setId(snapshot.getKey());
+                                        post.setContent((String)snapshot.child("content").getValue());
+                                        post.setTitle((String)snapshot.child("title").getValue());
+                                        return post;
+                                    }
+
+                        }).build();
+                        //.setQuery(databaseReference, Post.class)
+                        //.build();
         adapter =
                 new FirebaseRecyclerAdapter<Post, MyRecyclerViewHolder>(options) {
                     @Override
