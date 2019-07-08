@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
 
 public class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
     TextView txt_title,txt_comment;
