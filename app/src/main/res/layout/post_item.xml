@@ -20,7 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_user"
         android:text="title"
-        android:textSize="28sp" />
+        android:textColor="@color/background"
+        android:background="@color/colorPrimary"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/txt_content"

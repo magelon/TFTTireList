@@ -1,10 +1,13 @@
 package com.lon.tftt.tfttirelist;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,15 +17,15 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 
 public class TireList extends AppCompatActivity {
@@ -37,7 +40,16 @@ public class TireList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /* //way to start a new activity
+        Intent intent=new Intent(this,Items.class);
+        startActivity(intent);
+        */
         setContentView(R.layout.activity_tire_list);
+
+
+        //Toolbar topToolBar=findViewById(R.id.toolbar);
+        //setSupportActionBar(topToolBar);
+
 
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -101,7 +113,6 @@ public class TireList extends AppCompatActivity {
 
                                         Picasso.get().load(imgUrl).into(imageView);
                                     }
-
                                 }
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -115,10 +126,8 @@ public class TireList extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if(dataSnapshot.getValue()!=null){
                                         String imgUrl=(String)dataSnapshot.getValue();
-
                                         Picasso.get().load(imgUrl).into(imageView2);
                                     }
-
                                 }
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -132,7 +141,6 @@ public class TireList extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
                                     String imgUrl=(String)dataSnapshot.getValue();
-
                                     Picasso.get().load(imgUrl).into(imageView3);
                                 }
                             }
@@ -146,7 +154,6 @@ public class TireList extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
                                     String imgUrl=(String)dataSnapshot.getValue();
-
                                     Picasso.get().load(imgUrl).into(imageView4);
                                 }
                             }
@@ -160,7 +167,6 @@ public class TireList extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
                                     String imgUrl=(String)dataSnapshot.getValue();
-
                                     Picasso.get().load(imgUrl).into(imageView5);
                                 }
                             }
@@ -174,7 +180,6 @@ public class TireList extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
                                     String imgUrl=(String)dataSnapshot.getValue();
-
                                     Picasso.get().load(imgUrl).into(imageView6);
                                 }
                             }
@@ -188,7 +193,6 @@ public class TireList extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
                                     String imgUrl=(String)dataSnapshot.getValue();
-
                                     Picasso.get().load(imgUrl).into(imageView7);
                                 }
                             }
@@ -203,7 +207,6 @@ public class TireList extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if(dataSnapshot.getValue()!=null){
                                         String imgUrl=(String)dataSnapshot.getValue();
-
                                         Picasso.get().load(imgUrl).into(imageView8);
                                     }
                                 }
