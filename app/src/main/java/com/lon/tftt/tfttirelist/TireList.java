@@ -25,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -71,6 +72,20 @@ public class TireList extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch(itemId) {
+
+            case R.id.items:
+                Intent intent=new Intent(this,Items.class);
+                startActivity(intent);
+                return true;
+            // manage other entries if you have it ...
+        }
         return true;
     }
 
