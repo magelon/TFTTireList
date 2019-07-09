@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -45,8 +46,8 @@ public class TireList extends AppCompatActivity {
         */
         setContentView(R.layout.activity_tire_list);
 
-        //Toolbar topToolBar=findViewById(R.id.toolbar);
-        //setSupportActionBar(topToolBar);
+        Toolbar topToolBar=findViewById(R.id.toolbar);
+        setSupportActionBar(topToolBar);
 
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -60,6 +61,15 @@ public class TireList extends AppCompatActivity {
         displayComment();
 
         adapter.notifyDataSetChanged();
+    }
+
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.navigation, menu);
+        return true;
     }
 
     //post comm function
