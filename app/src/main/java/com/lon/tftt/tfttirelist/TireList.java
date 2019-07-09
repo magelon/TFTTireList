@@ -52,6 +52,9 @@ public class TireList extends AppCompatActivity {
         Toolbar topToolBar=findViewById(R.id.toolbar);
         setSupportActionBar(topToolBar);
 
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

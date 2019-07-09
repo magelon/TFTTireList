@@ -16,6 +16,15 @@ public class Items extends AppCompatActivity {
 
         Toolbar topToolBar=findViewById(R.id.toolbar);
         setSupportActionBar(topToolBar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     // Menu icons are inflated just as they were with actionbar
