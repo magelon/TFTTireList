@@ -6,7 +6,7 @@ import android.view.Menu;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Items extends AppCompatActivity {
+public class ItemList extends AppCompatActivity {
 
 
     @Override

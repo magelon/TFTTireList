@@ -84,7 +84,7 @@ public class TireList extends AppCompatActivity {
         switch(itemId) {
 
             case R.id.items:
-                Intent intent=new Intent(this,Items.class);
+                Intent intent=new Intent(this,ItemList.class);
                 startActivity(intent);
                 return true;
             // manage other entries if you have it ...
