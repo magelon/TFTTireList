@@ -27,8 +27,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-
-
 public class TireList extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
@@ -47,10 +45,8 @@ public class TireList extends AppCompatActivity {
         */
         setContentView(R.layout.activity_tire_list);
 
-
         //Toolbar topToolBar=findViewById(R.id.toolbar);
         //setSupportActionBar(topToolBar);
-
 
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -58,11 +54,12 @@ public class TireList extends AppCompatActivity {
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("pows");
 
-//call post function
+        //call post function
         //call firebase adapter
-        //adapter.notifyDataSetChanged();
 
         displayComment();
+
+        adapter.notifyDataSetChanged();
     }
 
     //post comm function
@@ -77,10 +74,7 @@ public class TireList extends AppCompatActivity {
        // databaseReference.push().setValue(post);
     }
 
-
-
     private void displayComment() {
-
         options =
                 new FirebaseRecyclerOptions.Builder<Post>()
                         .setQuery(databaseReference, new SnapshotParser<Post>() {
@@ -116,7 +110,6 @@ public class TireList extends AppCompatActivity {
                         //split the champions string into indevidul champions
                         String[] champions=post.getContent().split(",");
                         //convert champions to imgs
-
                         final DatabaseReference databaseReferenceImg=firebaseDatabase.getReference("champions");
 
                         databaseReferenceImg.child(champions[0]).child("img").addListenerForSingleValueEvent(new ValueEventListener() {
