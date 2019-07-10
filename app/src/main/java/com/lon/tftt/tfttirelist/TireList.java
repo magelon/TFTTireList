@@ -102,6 +102,7 @@ public class TireList extends AppCompatActivity {
 
         //use push function to create uniqe id in firebase database
        // databaseReference.push().setValue(post);
+       //// databaseReference.child("a").setValue(post);
     }
 
     private void displayComment() {
