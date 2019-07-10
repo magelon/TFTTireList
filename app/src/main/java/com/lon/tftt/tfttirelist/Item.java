@@ -21,7 +21,7 @@ public class Item {
     public Item(String id, String combo,String img) {
         this.id = id;
         this.combo = combo;
-        this.img=img
+        this.img=img;
     }
 
     public String getId() {
