@@ -31,7 +31,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
-public class TireList extends AppCompatActivity {
+public class TierList extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
