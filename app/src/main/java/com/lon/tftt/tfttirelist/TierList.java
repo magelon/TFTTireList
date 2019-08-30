@@ -9,6 +9,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import com.firebase.ui.database.SnapshotParser;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,9 +22,11 @@ import com.squareup.picasso.Picasso;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +34,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class TierList extends AppCompatActivity {
 
@@ -38,6 +45,8 @@ public class TierList extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseRecyclerOptions<Post> options;
     FirebaseRecyclerAdapter<Post, MyRecyclerViewHolder> adapter;
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +76,21 @@ public class TierList extends AppCompatActivity {
         displayComment();
 
         adapter.notifyDataSetChanged();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+
+
+        AdRequest adRequest = new AdRequest.Builder()
+//                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+//                .addTestDevice("9928FCB75D0F7AAE07ADF15C53DA3DA0")
+                .build();
+        mAdView.loadAd(adRequest);
     }
 
 
@@ -106,9 +130,12 @@ public class TierList extends AppCompatActivity {
     }
 
     private void displayComment() {
+
+
         options =
                 new FirebaseRecyclerOptions.Builder<Post>()
-                        .setQuery(databaseReference, new SnapshotParser<Post>() {
+
+                        .setQuery(databaseReference.limitToFirst(10), new SnapshotParser<Post>() {
                                     @NonNull
                                     @Override
                                     public Post parseSnapshot(@NonNull DataSnapshot snapshot) {

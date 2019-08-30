@@ -10,20 +10,41 @@
 
     <!-- Load the toolbar here -->
     <include
+        android:id="@+id/include"
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_marginTop="50dp"
-        android:clipToPadding="false"
+        android:layout_marginBottom="50dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="1.0"
         >
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3308520213502941/7304066377"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="6dp">
+
+    </com.google.android.gms.ads.AdView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

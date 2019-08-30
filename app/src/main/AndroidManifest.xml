@@ -21,6 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".ItemList" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3308520213502941~1247770394"/>
+
     </application>
 
 </manifest>
